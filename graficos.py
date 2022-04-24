@@ -6,7 +6,7 @@ import matplotlib.pyplot as plt
 def single_draw(container_size,containers,aux):
     for container, n in zip(containers,range(len(containers))):
         btm = 0
-        container_label = "Contenedor " + str(n+1)
+        container_label = "C " + str(n+1)
         for i in range(len(container)):
             if i == len(container) - 1:
                 aux.bar(container_label, container[i],  yerr=[[0],[container_size-btm-container[i]]], edgecolor="black",linewidth=1, bottom=btm)
@@ -20,14 +20,14 @@ def single_draw(container_size,containers,aux):
 def multi_draw(container_size,containers,aux):
     for container, graph, n in zip(containers,aux,range(len(containers))):
         btm = 0
-        container_label = "Contenedor " + str(n+1)
+        container_label = "C " + str(n+1)
         for i in range(len(container)):
             if i == len(container) - 1:
                 graph.bar(container_label, container[i],  yerr=[[0],[container_size-btm-container[i]]], edgecolor="black",linewidth=1, bottom=btm, color="#1976D2")
             elif i == 0:
                 graph.bar(container_label, container[i],  edgecolor="black",linewidth=1, color="#FFEB3B")
             else:
-                graph.bar(container_label, container[i],  edgecolor="black",linewidth=1, bottom=btm, color="#8BC34A")
+                graph.bar(container_label, container[i],  edgecolor="black",linewidth=1, bottom=btm, color="#FFEB3B")
             btm += container[i]
 
 #Para dibujar todos los contenedores calculados
