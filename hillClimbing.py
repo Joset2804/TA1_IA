@@ -15,9 +15,9 @@ def findBestBox(container,boxes,containerSize):
     for box in boxes:
         heuristics.append(heuristic(container,box,containerSize))
     if heuristics:
-        max_h = max(heuristics)
-        if max_h != 0: 
-            selection = heuristics.index(max_h) 
+        maxHeight = max(heuristics)
+        if maxHeight != 0: 
+            selection = heuristics.index(maxHeight) 
             container.append(boxes.pop(selection))
             return True 
     return False
