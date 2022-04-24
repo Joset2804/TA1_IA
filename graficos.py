@@ -1,3 +1,4 @@
+from turtle import color
 import numpy as np
 import matplotlib.pyplot as plt
 
@@ -22,11 +23,11 @@ def multi_draw(container_size,containers,aux):
         container_label = "Contenedor " + str(n+1)
         for i in range(len(container)):
             if i == len(container) - 1:
-                graph.bar(container_label, container[i],  yerr=[[0],[container_size-btm-container[i]]], edgecolor="black",linewidth=1, bottom=btm)
+                graph.bar(container_label, container[i],  yerr=[[0],[container_size-btm-container[i]]], edgecolor="black",linewidth=1, bottom=btm, color="#1976D2")
             elif i == 0:
-                graph.bar(container_label, container[i],  edgecolor="black",linewidth=1)
-            else:
-                graph.bar(container_label, container[i],  edgecolor="black",linewidth=1, bottom=btm)
+                graph.bar(container_label, container[i],  edgecolor="black",linewidth=1, color="#FFEB3B")
+            ##else:
+                #graph.bar(container_label, container[i],  edgecolor="black",linewidth=1, bottom=btm, color="#8BC34A")
             btm += container[i]
 
 #Para dibujar todos los contenedores calculados
